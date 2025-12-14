@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "mineduino:block/adiomantium_block"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "mineduino:adiomantium_block"
+    }
+  ],
+  "result": {
+    "id": "mineduino:adiomantium_ingot",
+    "count": 9
+  }
+}

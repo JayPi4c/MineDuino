@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "mineduino",
+	"version": "${version}",
+	"name": "MineDuino",
+	"description": "Connect your Minecraft world with Arduino hardware!",
+	"authors": [
+		"JayPi4c"
+	],
+	"contact": {
+		"homepage": "https://jaypi4c.de/",
+		"sources": "https://github.com/JayPi4c/MineDuino"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/mineduino/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"de.jaypi4c.mineduino.MineDuino"
+		],
+		"fabric-datagen": [
+			"de.jaypi4c.mineduino.MineDuinoDataGenerator"
+		],
+		"client": [
+			"de.jaypi4c.mineduino.MineDuinoClient"
+		]
+	},
+	"mixins": [
+		"mineduino.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.2",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

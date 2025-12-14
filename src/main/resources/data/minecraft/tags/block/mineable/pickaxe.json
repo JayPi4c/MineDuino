@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "mineduino:adiomantium_ore",
+    "mineduino:adiomantium_block"
+  ]
+}

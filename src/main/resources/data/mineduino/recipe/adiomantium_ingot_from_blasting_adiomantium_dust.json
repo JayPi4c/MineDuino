@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.7,
+  "group": "adiomantium_ingot",
+  "ingredient": {
+    "item": "mineduino:adiomantium_dust"
+  },
+  "result": {
+    "id": "mineduino:adiomantium_ingot"
+  }
+}
