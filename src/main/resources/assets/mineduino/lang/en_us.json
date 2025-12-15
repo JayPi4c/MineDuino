@@ -2,5 +2,7 @@
   "item.mineduino.adiomantium_dust": "Adiomantium Dust",
   "item.mineduino.adiomantium_ingot": "Adiomantium Ingot",
   "block.mineduino.adiomantium_block": "Block of Adiomantium",
-  "block.mineduino.adiomantium_ore": "Adiomantium Ore"
+  "block.mineduino.adiomantium_ore": "Adiomantium Ore",
+  "block.mineduino.interactor": "Interactor",
+  "itemgroup.mineduino.items": "MineDuino Items"
 }

@@ -15,17 +15,22 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 public class MineDuinoBlocks {
-    private static final Block ADIOMANTIUM_BLOCK = registerBlock("adiomantium_block",
+    public static final Block ADIOMANTIUM_BLOCK = registerBlock("adiomantium_block",
             new Block(AbstractBlock.Settings.create()
                     .strength(5f, 6f)
                     .requiresTool()
                     .sounds(BlockSoundGroup.METAL)));
-    private static final Block ADIOMANTIUM_ORE = registerBlock("adiomantium_ore",
+    public static final Block ADIOMANTIUM_ORE = registerBlock("adiomantium_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(2, 5),
                     AbstractBlock.Settings.create()
                             .strength(4f, 5f)
                             .requiresTool()
                             .sounds(BlockSoundGroup.STONE)));
+    public static final Block INTERACTOR = registerBlock("interactor",
+            new Interactor(AbstractBlock.Settings.create()
+                    .strength(3f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.METAL)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
@@ -48,5 +53,7 @@ public class MineDuinoBlocks {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries ->
                 entries.add(MineDuinoBlocks.ADIOMANTIUM_ORE)
         );
+
+
     }
 }
