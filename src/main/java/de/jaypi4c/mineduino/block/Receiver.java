@@ -33,7 +33,7 @@ public class Receiver extends BlockWithEntity {
     public static void setPowered(World world, BlockPos pos, boolean powered) {
         BlockState state = world.getBlockState(pos);
         if (state.getBlock() instanceof Receiver && state.get(POWERED) != powered) {
-            world.setBlockState(pos, state.with(POWERED, powered), 3);
+            world.setBlockState(pos, state.with(POWERED, powered), Block.NOTIFY_ALL);
             world.updateNeighborsAlways(pos, state.getBlock());
         }
     }
