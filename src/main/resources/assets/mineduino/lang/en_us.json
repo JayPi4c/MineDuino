@@ -4,5 +4,6 @@
   "block.mineduino.adiomantium_block": "Block of Adiomantium",
   "block.mineduino.adiomantium_ore": "Adiomantium Ore",
   "block.mineduino.interactor": "Interactor",
+  "block.mineduino.receiver": "Receiver",
   "itemgroup.mineduino.items": "MineDuino Items"
 }

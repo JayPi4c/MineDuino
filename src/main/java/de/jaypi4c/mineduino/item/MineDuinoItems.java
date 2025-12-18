@@ -1,9 +1,7 @@
 package de.jaypi4c.mineduino.item;
 
 import de.jaypi4c.mineduino.MineDuino;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -19,11 +17,6 @@ public class MineDuinoItems {
 
     public static void registerItems() {
         MineDuino.LOGGER.info("Registering Items for  " + MineDuino.MOD_ID);
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
-            entries.add(ADIOMANTIUM_DUST);
-            entries.add(ADIOMANTIUM_INGOT);
-        });
     }
 
 

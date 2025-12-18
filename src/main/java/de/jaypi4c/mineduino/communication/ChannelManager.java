@@ -1,8 +1,10 @@
 package de.jaypi4c.mineduino.communication;
 
 import org.schlunzis.jduino.channel.Channel;
+import org.schlunzis.jduino.channel.ChannelMessageListener;
 import org.schlunzis.jduino.channel.serial.SerialDevice;
 import org.schlunzis.jduino.channel.serial.SerialDeviceConfiguration;
+import org.schlunzis.jduino.protocol.tlv.TLV;
 import org.schlunzis.jduino.simple.SimpleChannel;
 
 public class ChannelManager {
@@ -15,5 +17,8 @@ public class ChannelManager {
         simpleChannel.open(serialConfig);
     }
 
+    public static void addListener(ChannelMessageListener<TLV> listener) {
+        simpleChannel.addMessageListener(listener);
+    }
 
 }

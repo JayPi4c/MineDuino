@@ -80,7 +80,7 @@ public class Interactor extends BlockWithEntity {
         super.neighborUpdate(state, world, pos, block, fromPos, notify);
     }
 
-
+    
     private void onPowerChange(World world, BlockPos pos, boolean powered) {
         BlockEntity be = world.getBlockEntity(pos);
         if (be instanceof InteractorBlockEntity ibe) {
