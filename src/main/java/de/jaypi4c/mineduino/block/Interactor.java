@@ -3,6 +3,7 @@ package de.jaypi4c.mineduino.block;
 import com.mojang.serialization.MapCodec;
 import de.jaypi4c.mineduino.MineDuino;
 import de.jaypi4c.mineduino.block.entity.InteractorBlockEntity;
+import de.jaypi4c.mineduino.communication.ChannelManager;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
@@ -33,6 +34,7 @@ public class Interactor extends BlockWithEntity {
             if (be instanceof InteractorBlockEntity ibe) {
                 UUID owner = ibe.getOwner();
                 if (owner.equals(InteractorBlockEntity.UNOWNED_UUID)) {
+                    ChannelManager.simpleChannel.sendLEDCommand(13, true);
                     // not claimed yet
                     ibe.setOwner(id);
                     return ActionResult.SUCCESS_NO_ITEM_USED;
@@ -40,6 +42,7 @@ public class Interactor extends BlockWithEntity {
                     // claimed by another player
                     return ActionResult.FAIL;
                 } else {
+                    ChannelManager.simpleChannel.sendLEDCommand(13, false);
                     // claimed by the same player
                     MineDuino.LOGGER.info("Interactor at {} used by its owner {}. Unclaiming it...", pos, player.getName().getString());
                     ibe.setOwner(InteractorBlockEntity.UNOWNED_UUID);
