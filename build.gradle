@@ -33,7 +33,7 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    implementation 'com.github.schlunzis:jduino:d55e68d'
+    implementation 'com.github.schlunzis.jduino:simple:81790ab'
 
 }
 
