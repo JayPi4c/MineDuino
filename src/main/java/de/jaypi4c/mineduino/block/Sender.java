@@ -6,13 +6,19 @@ import net.minecraft.block.AbstractRedstoneGateBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.particle.DustParticleEffect;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
+import org.apache.commons.lang3.tuple.Triple;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class Sender extends Block {
 
@@ -24,6 +30,27 @@ public class Sender extends Block {
         this.setDefaultState(this.getDefaultState().with(POWERED, false));
     }
 
+    private static void spawnParticles(BlockState state, WorldAccess world, BlockPos pos, Random random, float alpha) {
+        final List<Triple<Double, Double, Double>> offsets = List.of(
+                Triple.of(0.5, 0.5, 1.0),
+                Triple.of(0.5, 0.5, 0.0),
+                Triple.of(0.5, 1.0, 0.5),
+                Triple.of(0.5, 0.0, 0.5),
+                Triple.of(1.0, 0.5, 0.5),
+                Triple.of(0.0, 0.5, 0.5)
+        );
+        for (Triple<Double, Double, Double> offset : offsets) {
+            if (random.nextFloat() < .25f)
+                world.addParticle(new DustParticleEffect(Vec3d.unpackRgb(13178547).toVector3f(), alpha),
+                        pos.getX() + offset.getLeft(),
+                        pos.getY() + offset.getMiddle(),
+                        pos.getZ() + offset.getRight(),
+                        random.nextDouble() - 0.5 / 10,
+                        random.nextDouble() - 0.5 / 10,
+                        random.nextDouble() - 0.5 / 10);
+        }
+    }
+
     @Override
     public MapCodec<Sender> getCodec() {
         return CODEC;
@@ -33,6 +60,13 @@ public class Sender extends Block {
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         return this.getDefaultState().with(POWERED, ctx.getWorld().isReceivingRedstonePower(ctx.getBlockPos()));
+    }
+
+    @Override
+    public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
+        if (state.get(POWERED)) {
+            spawnParticles(state, world, pos, random, 0.5F);
+        }
     }
 
     @Override
