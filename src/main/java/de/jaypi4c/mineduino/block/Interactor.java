@@ -4,11 +4,14 @@ import com.mojang.serialization.MapCodec;
 import de.jaypi4c.mineduino.MineDuino;
 import de.jaypi4c.mineduino.block.entity.InteractorBlockEntity;
 import de.jaypi4c.mineduino.communication.ChannelManager;
+import de.jaypi4c.mineduino.gui.screens.SettingsScreen;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -49,6 +52,8 @@ public class Interactor extends BlockWithEntity {
                     return ActionResult.SUCCESS_NO_ITEM_USED;
                 }
             }
+        } else if (player.isSneaking()) {
+            MinecraftClient.getInstance().setScreen(new SettingsScreen(Text.empty()));
         }
         return super.onUse(state, world, pos, player, hit);
     }
