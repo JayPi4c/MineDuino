@@ -11,7 +11,14 @@ public class MineDuinoBlockEntities {
 
     public static void registerBlockEntities() {
         MineDuino.LOGGER.info("Registering Block Entities for " + MineDuino.MOD_ID);
-    }
+    }    public static final BlockEntityType<ReceiverBlockEntity> RECEIVER_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE,
+            Identifier.of(MineDuino.MOD_ID, "receiver_block_entity"),
+            BlockEntityType
+                    .Builder
+                    .create(ReceiverBlockEntity::new, MineDuinoBlocks.RECEIVER)
+                    .build(null));
+
+
 
     public static final BlockEntityType<InteractorBlockEntity> INTERACTOR_BLOCK_ENTITY =
             Registry.register(Registries.BLOCK_ENTITY_TYPE,

@@ -1,13 +1,11 @@
 package de.jaypi4c.mineduino.block;
 
 import de.jaypi4c.mineduino.MineDuino;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.ExperienceDroppingBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
@@ -32,6 +30,17 @@ public class MineDuinoBlocks {
                     .requiresTool()
                     .sounds(BlockSoundGroup.METAL)));
 
+    public static final Block RECEIVER = registerBlock("receiver",
+            new Receiver(AbstractBlock.Settings.create()
+                    .strength(3f)
+                    .sounds(BlockSoundGroup.METAL)));
+
+    public static final Block SENDER = registerBlock("sender",
+            new Sender(AbstractBlock.Settings.create()
+                    .strength(3f)
+                    .sounds(BlockSoundGroup.METAL)));
+    
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(MineDuino.MOD_ID, name), block);
@@ -43,17 +52,5 @@ public class MineDuinoBlocks {
 
     public static void registerBlocks() {
         MineDuino.LOGGER.info("Registering Blocks for  " + MineDuino.MOD_ID);
-
-        // building blocks
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
-            entries.add(MineDuinoBlocks.ADIOMANTIUM_BLOCK);
-        });
-
-        // natural blocks
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries ->
-                entries.add(MineDuinoBlocks.ADIOMANTIUM_ORE)
-        );
-
-
     }
 }

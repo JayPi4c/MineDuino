@@ -17,12 +17,16 @@ public class MineDuinoItemGroups {
             FabricItemGroup.builder()
                     .icon(() -> new ItemStack((MineDuinoItems.ADIOMANTIUM_INGOT)))
                     .displayName(Text.translatable("itemgroup.mineduino.items"))
-                    .entries(((displayContext, entries) -> {
+                    .entries(((_, entries) -> {
+                        // Items
                         entries.add(MineDuinoItems.ADIOMANTIUM_INGOT);
                         entries.add(MineDuinoItems.ADIOMANTIUM_DUST);
+                        // Blocks
                         entries.add(MineDuinoBlocks.ADIOMANTIUM_BLOCK);
                         entries.add(MineDuinoBlocks.ADIOMANTIUM_ORE);
                         entries.add(MineDuinoBlocks.INTERACTOR);
+                        entries.add(MineDuinoBlocks.RECEIVER);
+                        entries.add(MineDuinoBlocks.SENDER);
                     }))
                     .build());
 
