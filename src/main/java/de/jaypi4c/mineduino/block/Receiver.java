@@ -26,7 +26,7 @@ public class Receiver extends BlockWithEntity {
     public Receiver(Settings settings) {
         super(settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(POWERED, false));
-        ChannelManager.addListener(message -> trigger((TLVMessage) message));
+        ChannelManager.getInstance().addListener(message -> trigger((TLVMessage) message));
     }
 
     // helper to toggle from outside if needed

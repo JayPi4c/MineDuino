@@ -37,7 +37,7 @@ public class Interactor extends BlockWithEntity {
             if (be instanceof InteractorBlockEntity ibe) {
                 UUID owner = ibe.getOwner();
                 if (owner.equals(InteractorBlockEntity.UNOWNED_UUID)) {
-                    ChannelManager.simpleChannel.sendLEDCommand(13, true);
+                    ChannelManager.getInstance().sendLEDCommand(true);
                     // not claimed yet
                     ibe.setOwner(id);
                     return ActionResult.SUCCESS_NO_ITEM_USED;
@@ -45,7 +45,7 @@ public class Interactor extends BlockWithEntity {
                     // claimed by another player
                     return ActionResult.FAIL;
                 } else {
-                    ChannelManager.simpleChannel.sendLEDCommand(13, false);
+                    ChannelManager.getInstance().sendLEDCommand(false);
                     // claimed by the same player
                     MineDuino.LOGGER.info("Interactor at {} used by its owner {}. Unclaiming it...", pos, player.getName().getString());
                     ibe.setOwner(InteractorBlockEntity.UNOWNED_UUID);
@@ -53,7 +53,7 @@ public class Interactor extends BlockWithEntity {
                 }
             }
         } else if (player.isSneaking()) {
-            MinecraftClient.getInstance().setScreen(new SettingsScreen(Text.empty()));
+            MinecraftClient.getInstance().setScreen(new SettingsScreen(null, Text.empty()));
         }
         return super.onUse(state, world, pos, player, hit);
     }

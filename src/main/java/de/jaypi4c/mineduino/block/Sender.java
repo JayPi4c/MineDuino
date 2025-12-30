@@ -76,10 +76,10 @@ public class Sender extends Block {
             if (bl != world.isReceivingRedstonePower(pos)) {
                 if (bl) {
                     world.scheduleBlockTick(pos, this, 4);
-                    ChannelManager.simpleChannel.sendLEDCommand(13, false);
+                    ChannelManager.getInstance().sendLEDCommand(false);
                 } else {
                     world.setBlockState(pos, state.cycle(POWERED), Block.NOTIFY_LISTENERS);
-                    ChannelManager.simpleChannel.sendLEDCommand(13, true);
+                    ChannelManager.getInstance().sendLEDCommand(true);
                 }
             }
         }

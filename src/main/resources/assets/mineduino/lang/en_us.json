@@ -6,5 +6,6 @@
   "block.mineduino.interactor": "Interactor",
   "block.mineduino.receiver": "Receiver",
   "block.mineduino.sender": "Sender",
-  "itemgroup.mineduino.items": "MineDuino Items"
+  "itemgroup.mineduino.items": "MineDuino Items",
+  "options.mineduino.title": "MineDuino Settings"
 }
