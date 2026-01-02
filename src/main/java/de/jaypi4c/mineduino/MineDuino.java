@@ -4,7 +4,6 @@ import de.jaypi4c.mineduino.block.MineDuinoBlocks;
 import de.jaypi4c.mineduino.block.entity.MineDuinoBlockEntities;
 import de.jaypi4c.mineduino.communication.ChannelManager;
 import de.jaypi4c.mineduino.item.MineDuinoItemGroups;
-import de.jaypi4c.mineduino.item.MineDuinoItems;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,9 +17,7 @@ public class MineDuino implements ModInitializer {
     public void onInitialize() {
         ChannelManager.init();
         MineDuinoItemGroups.registerItemGroups();
-        MineDuinoItems.registerItems();
         MineDuinoBlocks.registerBlocks();
-
         MineDuinoBlockEntities.registerBlockEntities();
     }
 }
