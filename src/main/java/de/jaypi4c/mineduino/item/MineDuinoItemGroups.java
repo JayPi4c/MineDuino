@@ -17,7 +17,7 @@ public class MineDuinoItemGroups {
             FabricItemGroup.builder()
                     .icon(() -> new ItemStack((MineDuinoItems.ADIOMANTIUM_INGOT)))
                     .displayName(Text.translatable("itemgroup.mineduino.items"))
-                    .entries(((_, entries) -> {
+                    .entries(((ignored, entries) -> {
                         // Items
                         entries.add(MineDuinoItems.ADIOMANTIUM_INGOT);
                         entries.add(MineDuinoItems.ADIOMANTIUM_DUST);
