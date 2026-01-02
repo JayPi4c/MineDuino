@@ -1,11 +1,7 @@
 {
-  "item.mineduino.adiomantium_dust": "Adiomantium Dust",
-  "item.mineduino.adiomantium_ingot": "Adiomantium Ingot",
-  "block.mineduino.adiomantium_block": "Block of Adiomantium",
-  "block.mineduino.adiomantium_ore": "Adiomantium Ore",
   "block.mineduino.interactor": "Interactor",
   "block.mineduino.receiver": "Receiver",
   "block.mineduino.sender": "Sender",
-  "itemgroup.mineduino.items": "MineDuino Items",
+  "itemgroup.mineduino.items": "MineDuino",
   "options.mineduino.title": "MineDuino Settings"
 }

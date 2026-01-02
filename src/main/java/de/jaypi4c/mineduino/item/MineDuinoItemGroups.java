@@ -15,15 +15,9 @@ public class MineDuinoItemGroups {
     public static final ItemGroup MINEDUINO_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(MineDuino.MOD_ID, "mineduino_items"),
             FabricItemGroup.builder()
-                    .icon(() -> new ItemStack((MineDuinoItems.ADIOMANTIUM_INGOT)))
+                    .icon(() -> new ItemStack((MineDuinoBlocks.SENDER)))
                     .displayName(Text.translatable("itemgroup.mineduino.items"))
                     .entries(((_, entries) -> {
-                        // Items
-                        entries.add(MineDuinoItems.ADIOMANTIUM_INGOT);
-                        entries.add(MineDuinoItems.ADIOMANTIUM_DUST);
-                        // Blocks
-                        entries.add(MineDuinoBlocks.ADIOMANTIUM_BLOCK);
-                        entries.add(MineDuinoBlocks.ADIOMANTIUM_ORE);
                         entries.add(MineDuinoBlocks.INTERACTOR);
                         entries.add(MineDuinoBlocks.RECEIVER);
                         entries.add(MineDuinoBlocks.SENDER);
