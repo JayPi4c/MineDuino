@@ -28,7 +28,6 @@ public class MineDuinoBlocks {
                     .strength(3f)
                     .sounds(BlockSoundGroup.METAL)));
 
-
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(MineDuino.MOD_ID, name), block);

@@ -17,7 +17,7 @@ public class MineDuinoItemGroups {
             FabricItemGroup.builder()
                     .icon(() -> new ItemStack((MineDuinoBlocks.SENDER)))
                     .displayName(Text.translatable("itemgroup.mineduino.items"))
-                    .entries(((ignored, entries) -> {
+                    .entries(((_, entries) -> {
                         entries.add(MineDuinoBlocks.INTERACTOR);
                         entries.add(MineDuinoBlocks.RECEIVER);
                         entries.add(MineDuinoBlocks.SENDER);
