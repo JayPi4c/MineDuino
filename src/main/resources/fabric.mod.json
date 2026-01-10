@@ -19,10 +19,10 @@
       "de.jaypi4c.mineduino.MineDuino"
     ],
     "fabric-datagen": [
-      "de.jaypi4c.mineduino.MineDuinoDataGenerator"
+      "de.jaypi4c.mineduino.datagen.MineDuinoDataGenerator"
     ],
     "client": [
-      "de.jaypi4c.mineduino.MineDuinoClient"
+      "de.jaypi4c.mineduino.client.MineDuinoClient"
     ]
   },
   "mixins": [

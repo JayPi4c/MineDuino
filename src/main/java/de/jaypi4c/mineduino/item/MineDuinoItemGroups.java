@@ -18,6 +18,10 @@ public class MineDuinoItemGroups {
                     .icon(() -> new ItemStack((MineDuinoBlocks.SENDER)))
                     .displayName(Text.translatable("itemgroup.mineduino.items"))
                     .entries(((_, entries) -> {
+                        // items
+                        entries.add(MineDuinoItems.GADGET);
+
+                        // blocks
                         entries.add(MineDuinoBlocks.INTERACTOR);
                         entries.add(MineDuinoBlocks.RECEIVER);
                         entries.add(MineDuinoBlocks.SENDER);
@@ -25,7 +29,7 @@ public class MineDuinoItemGroups {
                     .build());
 
     public static void registerItemGroups() {
-        MineDuino.LOGGER.info("Registering Item Groups for " + MineDuino.MOD_ID);
+        MineDuino.LOGGER.info("Registering Item Groups for {}", MineDuino.MOD_ID);
     }
 
 }

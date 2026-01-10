@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "mineduino:item/gadget"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "mineduino:gadget_state": 1
+      },
+      "model": "mineduino:item/gadget_active"
+    }
+  ]
+}

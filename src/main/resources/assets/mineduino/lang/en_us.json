@@ -3,5 +3,6 @@
   "block.mineduino.receiver": "Receiver",
   "block.mineduino.sender": "Sender",
   "itemgroup.mineduino.items": "MineDuino",
-  "options.mineduino.title": "MineDuino Settings"
+  "options.mineduino.title": "MineDuino Settings",
+  "item.mineduino-survival.gadget": "Gadget"
 }
